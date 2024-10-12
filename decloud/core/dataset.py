@@ -452,9 +452,11 @@ class RoisLoader(dict):
         # Tiles list
         self.train_tiles_list = get_list("TRAIN_TILES")
         self.valid_tiles_list = get_list("VALID_TILES")
+        self.test_tiles_list = get_list("TEST_TILES")
 
         self.fill_dict(self.train_tiles_list, "train")
         self.fill_dict(self.valid_tiles_list, "valid")
+        self.fill_dict(self.test_tiles_list, "test")
 
     def fill_dict(self, tiles_list, suffix):
         """
