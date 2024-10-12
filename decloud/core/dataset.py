@@ -417,12 +417,14 @@ class RoisLoader(dict):
      - "ROIS_ROOT_DIR": str
      - "TRAIN_TILES": str
      - "VALID_TILES": str
+     - "TEST_TILES": str
 
     Example of a .json file:
     {
       "ROIS_ROOT_DIR": "/data/decloud/ROI",
       "TRAIN_TILES":["T31TCK", "T31TDJ"],
       "VALID_TILES":["T31TEJ", "T31TCJ", "T31TDH"]
+      "TEST_TILES":["T31TCJ", "T31TDH"]
     }
     """
 
@@ -452,9 +454,11 @@ class RoisLoader(dict):
         # Tiles list
         self.train_tiles_list = get_list("TRAIN_TILES")
         self.valid_tiles_list = get_list("VALID_TILES")
+        self.test_tiles_list = get_list("TEST_TILES")
 
         self.fill_dict(self.train_tiles_list, "train")
         self.fill_dict(self.valid_tiles_list, "valid")
+        self.fill_dict(self.test_tiles_list, "test")
 
     def fill_dict(self, tiles_list, suffix):
         """
